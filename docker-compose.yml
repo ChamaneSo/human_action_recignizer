@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  yolo_slowfast:
+    image: yolo_slowfast:latest
+    container_name: yolo_slowfast
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
